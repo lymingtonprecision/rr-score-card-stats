@@ -1,0 +1,9 @@
+{:local #include #join [#or [#env PWD ".."] "/.config.edn"]
+
+ :shop-order-change-topic "changedata.shop_ord"
+ :kafka-broker #or [^:ref [:local :kafka-broker] "localhost:9092"]
+ :ifs #merge [{:host "localhost"
+               :sid  "IFS"
+               :user ""
+               :password ""}
+              ^:ref [:local :ifs]]}
